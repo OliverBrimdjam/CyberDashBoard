@@ -1,0 +1,45 @@
+/* table style */
+table {
+    width: 100%; 
+    margin: auto;
+    text-align: center;
+    background-color: lightgray;
+    border-radius: 5%;
+
+}
+
+tr, td {
+    height: 4em;
+    
+}
+
+/* label style */
+.labButton {
+    text-align: center;
+    background-color: grey;
+    color: whitesmoke;
+    padding: 15px;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    border-radius: 1em;
+    margin: 10px;
+    font-size: 1.3em;
+}
+
+/* input style */
+
+.formEle {
+    min-height: 22px;
+    min-width: 175px;
+    width: 50%;
+    height: 2.3em;
+    border-radius: 5px;
+}
+
+/* container content */
+
+#contContainer1 {
+    width: 70%;
+    min-width: 260px;
+    margin: auto;
+}
