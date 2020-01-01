@@ -5,12 +5,17 @@ table {
     text-align: center;
     background-color: lightgray;
     border-radius: 5%;
-
 }
 
 tr, td {
     height: 4em;
-    
+}
+
+.inputTag {
+    text-align: right;
+}
+.inputContainer {
+    text-align: left;
 }
 
 /* label style */
@@ -24,6 +29,10 @@ tr, td {
     border-radius: 1em;
     margin: 10px;
     font-size: 1.3em;
+}
+
+.labelTag {
+    font-size: 2em;
 }
 
 /* input style */
