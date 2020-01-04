@@ -6,7 +6,7 @@ html {
     width: 100%;
     border-radius: 5px;
 }
-#imgContainer1 {
+.imgContainer1 {
     width: 100%;
     max-width: 900px;
     min-width: 100px;

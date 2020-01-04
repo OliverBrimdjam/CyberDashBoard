@@ -49,9 +49,10 @@ tr, td {
 
 /* container content */
 
-#contContainer1 {
+.contContainer1 {
     width: 70%;
     min-width: 260px;
     margin: auto;
     max-width: 750px;
 }
+
