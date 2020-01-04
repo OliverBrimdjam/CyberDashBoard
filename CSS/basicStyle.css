@@ -48,11 +48,21 @@ tr, td {
     min-height: 22px;
     min-width: 175px;
     width: 50%;
-    height: 2.3em;
+    height: 1.6em;
     border-radius: 5px;
+    font-size: 1.2em;
 }
 
 div {
     margin: auto;
     text-align: center;
+}
+
+.labelTag {
+    font-size: 1.4em;
+}
+
+#imgHead {
+    width: 100%;
+    border-radius: 5px;
 }

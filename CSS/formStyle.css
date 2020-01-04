@@ -33,7 +33,7 @@ tr, td {
 }
 
 .labelTag {
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 /* input style */
@@ -42,7 +42,7 @@ tr, td {
     min-height: 22px;
     min-width: 175px;
     width: 50%;
-    height: 1.8em;
+    height: 1.6em;
     border-radius: 5px;
     font-size: 1.2em;
 }
