@@ -1,12 +1,37 @@
 .contContainer2 {
     width: 100%;
-    max-width: 300px;
-    min-width: ;
+    /*max-width: 300px;*/
+    min-width: 250px;
     height: auto;
     text-align: center;
-    display: inline-block;
+    display: block;
 
     background-color: khaki;
     margin: auto;
-
+    padding: 1%;
 }
+
+@media (min-width: 480px){
+    .contContainer2 {
+        width: 33%;
+        max-width: 400px;
+        text-align: center;
+        display: inline-block;
+
+        background-color: green;
+        margin: auto;
+        padding: 1%;
+    }
+}
+
+/*.contContainer3 {
+    width: 50%;
+    max-width: 150px;
+    min-width: 100px;
+    text-align: center;
+    display: inline-block;
+
+    background-color: greenyellow;
+    margin: auto;
+    padding: 1%;
+}*/
