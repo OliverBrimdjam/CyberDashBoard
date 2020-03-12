@@ -1,7 +1,0 @@
-1---Criar sistema de validação para formulários
-
-2---Corrigir ícones do mainsheet.html
-
-3---corrigir css do contentContainer1 pois o mesmo agora serve para outra função distorcendo tela auth e singin
-
-4---
