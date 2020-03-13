@@ -1,12 +1,9 @@
 .App {
-  /* text-align: center; */
   width: 100%;
 }
 
 .App-header {
   min-height: 100vh;
-  /* display: flex;
-  align-items: center; */
   width: 100%;
   background-color: lightgray;
 }
