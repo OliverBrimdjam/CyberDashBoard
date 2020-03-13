@@ -24,7 +24,7 @@ export function MenuIcon() {
 export function HeaderBar() {
   return (
     <img
-      class="Header__MenuIcon"
+      class="Header__MenuLine"
       src="./images/style-line.png"
       alt="header_bar"
     />
