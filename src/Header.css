@@ -1,0 +1,11 @@
+.Header__MainLogo {
+  display: inline-block;
+  width: 30%;
+}
+
+.Header__MenuIcon {
+  display: inline-block;
+  width: 3vw;
+  float: right;
+  margin: 2vw;
+}
