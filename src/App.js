@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { LogoG, MenuIcon, HeaderBar } from "./Header";
+import { TesteAnimation } from "./Main";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         <MenuIcon />
         <HeaderBar />
       </header>
+      <main>
+        <TesteAnimation />
+      </main>
     </div>
   );
 }
