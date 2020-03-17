@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
 import { LogoG, MenuIcon, HeaderBar } from "./Header";
-import { TesteAnimation, mudaTudo } from "./Main";
+import { TesteAnimation, TesteAnimation2 } from "./Main";
 
 function App() {
   return (
     <div className="App">
       <head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width" />
       </head>
       <header className="App-header">
@@ -17,6 +17,7 @@ function App() {
       </header>
       <main>
         <TesteAnimation />
+        <TesteAnimation2 />
       </main>
     </div>
   );
