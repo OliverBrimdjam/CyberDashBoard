@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { LogoG, MenuIcon, HeaderBar } from "./Header";
-import { TesteAnimation } from "./Main";
+import { TesteAnimation, mudaTudo } from "./Main";
 
 function App() {
   return (

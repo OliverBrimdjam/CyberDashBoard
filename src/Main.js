@@ -2,7 +2,14 @@ import React from "react";
 import "./Main.css";
 
 export function TesteAnimation() {
-  return <div class="painelAnimado"></div>;
+  const pupu = "blablalba";
+  return (
+    <div class="painelAnimado" id="cacaca" onClick="{mudaTudo()}">
+      {pupu}
+    </div>
+  );
 }
 
-export function mudaTudo() {}
+export function mudaTudo() {
+  document.getElementById("cacaca").style.width = "200px";
+}

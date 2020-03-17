@@ -2,6 +2,10 @@
   width: 100px;
   height: 100px;
   background-color: lightgreen;
-
-  transition: width 2s;
+  transform: translate(-50px, -100px);
+  /* transition: width 2s; */
 }
+
+/* .painelAnimado:hover {
+  width: 200px;
+} */
