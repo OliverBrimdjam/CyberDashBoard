@@ -3,7 +3,7 @@
   height: 100px;
   background-color: lightgreen;
   transform: translate(-50px, -100px);
-  /* transition: width 2s; */
+  transition: width 2s;
 }
 
 /* .painelAnimado:hover {

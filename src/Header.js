@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { mudaTudo } from "./Main";
 
 export function LogoG() {
   return (
@@ -17,6 +18,7 @@ export function MenuIcon() {
       class="Header__MenuIcon"
       src="./images/icones/menu-icon.png"
       alt="Menu_icon"
+      onClick={mudaTudo}
     />
   );
 }
