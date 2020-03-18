@@ -13,8 +13,11 @@
     height: 70vh;
     background-color: lightgreen;
     /* transform: translate(-50px, -100px); */
-    transition: height 1s;
-    display: none;
+    transition: left 0.9s;
+    /* display: none; */
+
+    position: fixed;
+    left: 320px;
   }
 }
 .painelAnimado2 {

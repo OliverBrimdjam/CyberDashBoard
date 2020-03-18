@@ -1,7 +1,7 @@
 import React from "react";
 import "./Main.css";
 
-// this function will just to check the viewport width
+// this function will just to check the viewport width and realise if mobile or not
 function checkWidth() {
   let windowWidth = window.innerWidth;
   let viewType;
@@ -14,41 +14,24 @@ function checkWidth() {
   return viewType;
 }
 
-//this function will check if the component is hide or not
-function checkMenuDisplay(id) {
-  let menuBlock = document.getElementById(id);
-  let menuSituation = menuBlock.style.display;
-
-  console.log(menuSituation + ": resposta do check");
-
-  return menuSituation;
-}
-
 export function toggleMenu() {
   let viewType = checkWidth();
-  let menuBlock = document.getElementById("cacaca");
-
-  let menuStatus = checkMenuDisplay("cacaca");
-
+  let menuBlock = document.getElementById("cacaca"); //need to change the id
+  //this step of function is working and toggle the hide/show status of menu on mobile
   if (viewType === "mobile") {
-    if (
-      menuStatus === "inline-block" ||
-      menuStatus === "inline" ||
-      menuStatus === "inline-flex" ||
-      menuStatus === "block"
-    ) {
-      menuBlock.style.display = "none";
+    if (menuBlock.style.left === "32px") {
+      menuBlock.style.left = "320px";
+      console.log("chegou");
     } else {
-      menuBlock.style.display = "block";
+      menuBlock.style.left = "32px";
+      console.log("aqui");
     }
   } else {
+    //lack of the desktop function to shift the menu hide/show status
   }
 }
 
+//necessary to change the function name and element className and Id
 export function TesteAnimation() {
   return <div className="painelAnimado" id="cacaca" onClick={toggleMenu}></div>;
-}
-
-export function TesteAnimation2() {
-  return <div className="painelAnimado2" id=""></div>;
 }

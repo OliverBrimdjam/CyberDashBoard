@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { LogoG, MenuIcon, HeaderBar } from "./Header";
-import { TesteAnimation, TesteAnimation2 } from "./Main";
+import { TesteAnimation } from "./Main";
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
       </header>
       <main>
         <TesteAnimation />
-        <TesteAnimation2 />
       </main>
     </div>
   );
