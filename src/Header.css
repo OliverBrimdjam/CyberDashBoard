@@ -1,18 +1,26 @@
 .Header__MainLogo {
   display: inline-block;
   width: 30%;
+  /* height: 55px; */
 }
 
 .Header__MenuIcon {
   display: inline-block;
   width: 3vw;
   float: right;
-  margin: 2vw;
+  margin: 1vw;
 }
 
 .Header__MenuLine {
   width: 100%;
   margin-top: 5vh;
+}
+
+.Header__MenuBlock {
+  width: 100%;
+  height: 5px;
+  background-color: lightpink;
+  transition: height 1s;
 }
 
 /* every media queryes changes will be aplicated on one single point */

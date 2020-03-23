@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { LogoG, MenuIcon, HeaderBar } from "./Header";
+import { CompleteMenu } from "./Header";
 import { TesteAnimation } from "./Main";
 
 function App() {
@@ -11,9 +11,7 @@ function App() {
         <meta name="viewport" content="width=device-width" />
       </head>
       <header className="App-header">
-        <LogoG />
-        <MenuIcon />
-        <HeaderBar />
+        <CompleteMenu />
       </header>
       <main>
         <TesteAnimation />

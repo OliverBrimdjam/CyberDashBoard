@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import { toggleMenu } from "./Main";
 
-export function LogoG() {
+function LogoG() {
   return (
     <img
       className="Header__MainLogo"
@@ -12,7 +12,7 @@ export function LogoG() {
   );
 }
 
-export function MenuIcon() {
+function MenuIcon() {
   return (
     <img
       className="Header__MenuIcon"
@@ -23,6 +23,10 @@ export function MenuIcon() {
   );
 }
 
+function MenuBlock() {
+  return <div className="Header__MenuBlock" id="MenuBlock"></div>;
+}
+
 export function HeaderBar() {
   return (
     <img
@@ -30,5 +34,16 @@ export function HeaderBar() {
       src="./images/style-line.png"
       alt="header_bar"
     />
+  );
+}
+
+export function CompleteMenu() {
+  return (
+    <div className="Header__CompleteMenu">
+      <LogoG />
+      <MenuIcon />
+      <MenuBlock />
+      <HeaderBar />
+    </div>
   );
 }
