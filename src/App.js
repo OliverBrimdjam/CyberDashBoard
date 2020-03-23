@@ -13,9 +13,7 @@ function App() {
       <header className="App-header">
         <CompleteMenu />
       </header>
-      <main>
-        <TesteAnimation />
-      </main>
+      <main>{/* <TesteAnimation /> */}</main>
     </div>
   );
 }

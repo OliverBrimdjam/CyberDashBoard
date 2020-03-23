@@ -18,9 +18,19 @@
 
 .Header__MenuBlock {
   width: 100%;
-  height: 5px;
-  background-color: lightpink;
+  height: 5vh;
+  background-color: goldenrod;
   transition: height 1s;
+}
+
+.Header__MenuBlock.big {
+  height: 10vh;
+}
+
+.Header__MenuBlock__MenuLab {
+  background-color: lightslategray;
+  margin-left: 1vh;
+  margin-right: 1vh;
 }
 
 /* every media queryes changes will be aplicated on one single point */

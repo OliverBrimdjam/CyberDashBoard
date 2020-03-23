@@ -4,13 +4,13 @@
   background-color: lightgreen;
   /* transform: translate(-50px, -100px); */
   transition: height 1s;
-  display: inline-flex;
+  display: block;
   position: fixed;
   top: 50px;
 }
 
 .painelAnimado.hidden {
-  height: 0;
+  height: 5px;
 }
 
 @media only screen and (max-device-width: 500px) {
@@ -27,7 +27,7 @@
   }
 
   .painelAnimado.hidden {
-    width: 0;
+    width: 5px;
   }
 }
 .painelAnimado2 {

@@ -23,11 +23,38 @@ function MenuIcon() {
   );
 }
 
-function MenuBlock() {
-  return <div className="Header__MenuBlock" id="MenuBlock"></div>;
+const menuTopics = [
+  {
+    title: "Main",
+    link: "0"
+  },
+  {
+    title: "Combat",
+    link: "0"
+  },
+  {
+    title: "Character",
+    link: "0"
+  }
+];
+
+function MenuLab(props) {
+  return <label className="Header__MenuBlock__MenuLab">{props.title}</label>;
 }
 
-export function HeaderBar() {
+function MenuBlock() {
+  const chamadaTeste = "Equips";
+  return (
+    <div className="Header__MenuBlock" id="MenuBlock">
+      <MenuLab title="Main" />
+      <MenuLab title="Character" />
+      <MenuLab title="Combat" />
+      <MenuLab title={chamadaTeste} />
+    </div>
+  );
+}
+
+function HeaderBar() {
   return (
     <img
       className="Header__MenuLine"
