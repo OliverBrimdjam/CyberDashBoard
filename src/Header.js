@@ -23,21 +23,6 @@ function MenuIcon() {
   );
 }
 
-const menuTopics = [
-  {
-    title: "Main",
-    link: "0"
-  },
-  {
-    title: "Combat",
-    link: "0"
-  },
-  {
-    title: "Character",
-    link: "0"
-  }
-];
-
 function MenuLab(props) {
   return <label className="Header__MenuBlock__MenuLab">{props.title}</label>;
 }
