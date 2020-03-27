@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "./Main.css";
 
 // this function will just to check the viewport width and realise if mobile or not

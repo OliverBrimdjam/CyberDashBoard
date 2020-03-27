@@ -1,9 +1,29 @@
 import React from "react";
 import "./App.css";
 import { CompleteMenu } from "./Header";
-import { TesteAnimation } from "./Main";
+import { TesteDeRepasse, testeDeRepasse } from "./character/life";
 
 function App() {
+  testeDeRepasse("coisas");
+
+  //player data
+  var player = [
+    {
+      id: 1,
+      nome: "eu",
+      profile: 1
+    }
+  ];
+  var charLifePath = [
+    {
+      saveNumber: 6,
+      BTM: 5,
+      damagePoints: 0,
+      stun: 4,
+      charId: 1
+    }
+  ];
+
   return (
     <div className="App">
       <head>
@@ -13,7 +33,7 @@ function App() {
       <header className="App-header">
         <CompleteMenu />
       </header>
-      <main>{/* <TesteAnimation /> */}</main>
+      <main></main>
     </div>
   );
 }
