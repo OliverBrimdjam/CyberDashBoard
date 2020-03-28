@@ -1,41 +1,45 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import { CompleteMenu } from "./Header";
-import { TesteDeRepasse, testeDeRepasse } from "./character/life";
+import Teste from "./character/life";
 
-function App() {
-  testeDeRepasse("coisas");
+const playerId = {
+  id: 1,
+  name: "eu",
+  profile: 1
+};
 
-  //player data
-  var player = [
-    {
-      id: 1,
-      nome: "eu",
-      profile: 1
-    }
-  ];
-  var charLifePath = [
-    {
-      saveNumber: 6,
-      BTM: 5,
-      damagePoints: 0,
-      stun: 4,
-      charId: 1
-    }
-  ];
+class App extends Component {
+  state = {
+    playInfo: [
+      {
+        saveNumber: 6,
+        BTM: 5,
+        damagePoints: 0,
+        damageUpdate: 0,
+        stun: 4,
+        charId: 1,
+        hitPlace: "torso"
+      }
+    ]
+  };
 
-  return (
-    <div className="App">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-      </head>
-      <header className="App-header">
-        <CompleteMenu />
-      </header>
-      <main></main>
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <head>
+          <meta charSet="UTF-8" />
+          <meta name="viewport" content="width=device-width" />
+        </head>
+        <header className="App-header">
+          <CompleteMenu />
+        </header>
+        <main>
+          <Teste propost={playerId} />
+        </main>
+      </div>
+    );
+  }
 }
 
 export default App;
