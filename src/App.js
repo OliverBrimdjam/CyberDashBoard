@@ -4,9 +4,11 @@ import { CompleteMenu } from "./Header";
 import { Teste } from "./character/life";
 
 var shotInfo = {
-  dmg: 1,
+  dmg: 14,
   bodyPlace: "l.leg",
-  profile: 1
+  profile: 1,
+  shotType: "normal",
+  btm: 4
 };
 
 class App extends Component {
@@ -27,10 +29,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <head>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width" />
-        </head>
         <header className="App-header">
           <CompleteMenu />
         </header>
