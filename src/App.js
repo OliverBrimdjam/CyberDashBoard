@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
 import { CompleteMenu } from "./Header";
-import Teste from "./character/life";
+import { Teste } from "./character/life";
 
-const playerId = {
-  id: 1,
-  name: "eu",
+var shotInfo = {
+  dmg: 1,
+  bodyPlace: "l.leg",
   profile: 1
 };
 
@@ -35,7 +35,7 @@ class App extends Component {
           <CompleteMenu />
         </header>
         <main>
-          <Teste propost={playerId} />
+          <Teste playerPath={shotInfo} />
         </main>
       </div>
     );

@@ -6,7 +6,7 @@
   min-height: 100px;
   width: 100%;
   background-color: lightgray;
-  position: fixed;
+  position: relative;
 }
 
 main {
