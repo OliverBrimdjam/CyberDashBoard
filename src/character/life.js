@@ -1,25 +1,26 @@
 import React, { Component } from "react";
 
-var papoca;
+var lifeProps;
 var finalDmg;
 var woundStatus;
 var stunSituation;
 var novoDano;
 var damagePath = {
-  totalDmg: 50,
+  totalDmg: 0,
   leftAdmg: 0,
   rightAdmg: 0,
-  leftLdmg: 20,
+  leftLdmg: 0,
   rightLdmg: 0
 };
 
 function btmApply(realDmg) {
-  let finalDmg = realDmg - papoca.playerPath.btm;
+  let finalDmg = realDmg - lifeProps.lifePath.btm;
   return finalDmg;
 }
 
 function AddDmg(dmg, splace) {
   damagePath.totalDmg += dmg;
+  console.log("este é o dano que chega via prop");
   console.log(damagePath.totalDmg);
   switch (splace) {
     case "l.arm":
@@ -39,44 +40,42 @@ function AddDmg(dmg, splace) {
       break;
     default:
   }
-  console.log(damagePath);
-}
-
-function resetDmg() {
-  novoDano = 0;
+  console.log("final do registro de dano");
 }
 
 export function Teste(props) {
-  papoca = props;
+  lifeProps = props;
 
-  finalDmg = btmApply(papoca.playerPath.dmg);
+  const [botabota, renderDmg] = React.useState(novoDano);
 
-  AddDmg(finalDmg, papoca.playerPath.bodyPlace);
+  let setDmg = () => {
+    finalDmg = btmApply(lifeProps.lifePath.dmg);
+    AddDmg(finalDmg, lifeProps.lifePath.bodyPlace);
+    renderDmg(damagePath.totalDmg);
+  };
+
+  let resetDmg = () => {
+    damagePath = {
+      totalDmg: 0,
+      leftAdmg: 0,
+      rightAdmg: 0,
+      leftLdmg: 0,
+      rightLdmg: 0
+    };
+    renderDmg(damagePath.totalDmg);
+  };
+
+  // AddDmg(finalDmg, lifeProps.lifePath.bodyPlace);
+  console.log(damagePath);
 
   woundStatus = "normal";
-
-  novoDano = damagePath.totalDmg;
-  const [botabota, updateDmg] = React.useState(novoDano);
-
-  // stunSituation = {
-  //   stunAttr: 3,
-  //   stunPenalty: 0,
-  //   stunSpecialEffect: 1
-  // };
-
-  // var titicaca = () => {
-  //   if (botabota === "sssss") {
-  //     return "topz";
-  //   } else {
-  //     return "trapz";
-  //   }
-  // };damagePath.totalDmg
 
   return (
     <div>
       <p>{botabota}</p>
-      <button onClick={() => updateDmg(novoDano)}>botão do carai</button>
-      <button onClick={() => updateDmg(0)}>reset</button>
+
+      <button onClick={() => resetDmg()}>reset</button>
+      <button onClick={() => setDmg()}>set damage</button>
     </div>
   );
 }

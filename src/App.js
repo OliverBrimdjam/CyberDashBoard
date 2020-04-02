@@ -12,19 +12,19 @@ var shotInfo = {
 };
 
 class App extends Component {
-  state = {
-    playInfo: [
-      {
-        saveNumber: 6,
-        BTM: 5,
-        damagePoints: 0,
-        damageUpdate: 0,
-        stun: 4,
-        charId: 1,
-        hitPlace: "torso"
-      }
-    ]
-  };
+  // state = {
+  //   playInfo: [
+  //     {
+  //       saveNumber: 6,
+  //       BTM: 5,
+  //       damagePoints: 0,
+  //       damageUpdate: 0,
+  //       stun: 4,
+  //       charId: 1,
+  //       hitPlace: "torso"
+  //     }
+  //   ]
+  // };
 
   render() {
     return (
@@ -33,7 +33,7 @@ class App extends Component {
           <CompleteMenu />
         </header>
         <main>
-          <Teste playerPath={shotInfo} />
+          <Teste lifePath={shotInfo} />
         </main>
       </div>
     );
