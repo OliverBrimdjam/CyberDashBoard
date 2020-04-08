@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 
-var lifeProps;
-var finalDmg;
-var woundStatus;
-var stunSituation;
-var novoDano;
+var lifeProps; //variable that receive the props from App.js
+var finalDmg; //receive the damage value after being subtracted by BTM modifier
+var novoDano; //initial value rendered by element
+
 var damagePath = {
   totalDmg: 0,
   leftAdmg: 0,
@@ -20,7 +19,7 @@ function btmApply(realDmg) {
 
 function AddDmg(dmg, splace) {
   damagePath.totalDmg += dmg;
-  console.log("este é o dano que chega via prop");
+
   console.log(damagePath.totalDmg);
   switch (splace) {
     case "l.arm":
@@ -40,7 +39,6 @@ function AddDmg(dmg, splace) {
       break;
     default:
   }
-  console.log("final do registro de dano");
 }
 
 export function Teste(props) {
@@ -65,15 +63,9 @@ export function Teste(props) {
     renderDmg(damagePath.totalDmg);
   };
 
-  // AddDmg(finalDmg, lifeProps.lifePath.bodyPlace);
-  console.log(damagePath);
-
-  woundStatus = "normal";
-
   return (
     <div>
       <p>{botabota}</p>
-
       <button onClick={() => resetDmg()}>reset</button>
       <button onClick={() => setDmg()}>set damage</button>
     </div>
