@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 var lifeProps; //variable that receive the props from App.js
 var finalDmg; //receive the damage value after being subtracted by BTM modifier

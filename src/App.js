@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import { CompleteMenu } from "./Header";
 import { Teste } from "./health/life";
+import { GeneralRender } from "./Main";
+
 
 var shotInfo = {
   dmg: 14,
@@ -10,6 +12,21 @@ var shotInfo = {
   shotType: "normal",
   btm: 4,
 };
+
+var lifeInfo = {
+  mortalSituation: "normal",
+  mortalNumber: 0,
+  stunSituation: "normal",
+  stunNumber: 0,
+  btm: 4,
+  wound: "normal",
+  head: 0,
+  torso:0,
+  rArm: 0,
+  lArm: 0,
+  rLeg: 0,
+  lLeg: 0
+}
 
 class App extends Component {
   render() {
@@ -20,6 +37,7 @@ class App extends Component {
         </header>
         <main>
           <Teste lifePath={shotInfo} />
+          <GeneralRender lifeInfo={lifeInfo}/>
         </main>
       </div>
     );
