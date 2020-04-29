@@ -44,7 +44,7 @@ export function GeneralRender(props) {
 
   return(
     <div>
-      <label>{woundLife}</label>
+      {/* <label>{woundLife}</label> */}
 
       <GeneralHealth 
 
