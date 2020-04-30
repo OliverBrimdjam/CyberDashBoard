@@ -26,7 +26,7 @@ export function toggleMenu() {
 }
 
 export function GeneralRender(props) {
-  lifeInfo = props;
+  lifeInfo = props.lifeInfo;
 
   const [woundLife, setWound] = React.useState(lifeInfo.wound);
   const [stunStat, setStun] = React.useState(lifeInfo.stunSituation);
@@ -37,17 +37,12 @@ export function GeneralRender(props) {
   const [lArmDmg, setLarmDmg] = React.useState(lifeInfo.lArm);
   const [rLegDmg, setRlegDmg] = React.useState(lifeInfo.rLeg);
   const [lLegDmg, setLlegDmg] = React.useState(lifeInfo.lLeg);
+
   
-
-
-
-
   return(
     <div>
-      {/* <label>{woundLife}</label> */}
-
+      
       <GeneralHealth 
-
         lifeInfo={lifeInfo}//big object life data
 
         //situation states
@@ -69,12 +64,7 @@ export function GeneralRender(props) {
         setRlegDmg={setRlegDmg}
         lLegDmg={lLegDmg}
         setLlegDmg={setLlegDmg}
-        
-      
       />
-
-      
-      
     </div>
   );
 }

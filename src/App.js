@@ -28,6 +28,8 @@ var lifeInfo = {
   lLeg: 0
 }
 
+console.log("App:" + lifeInfo.torso);
+
 class App extends Component {
   render() {
     return (
