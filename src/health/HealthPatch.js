@@ -93,27 +93,12 @@ export function GeneralHealth(props) {
         <label>Total Dmg</label>
         <label>{totalDmgS}</label>
       </div>
-      <div>
-        <label>Head</label>
-        <label>{headDmg}</label>
-        <button
-          onClick={() => {
-            setHeadDmg(headDmg + 1);
-            healthChangeEvento();
-          }}
-          onChange={healthChangeEvento}
-        >
-          +
-        </button>
-        <button
-          onClick={() => {
-            setHeadDmg(headDmg - 1);
-            healthChangeEvento();
-          }}
-        >
-          -
-        </button>
-      </div>
+      {DamageRow({
+        labelName: "Head",
+        value: headDmg,
+        setter: setHeadDmg,
+        outraCoisa: healthChangeEvento,
+      })}
       <div>
         <label>Torso</label>
         <label>{torsoDmg}</label>
