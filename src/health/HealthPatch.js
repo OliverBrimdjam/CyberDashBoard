@@ -1,14 +1,5 @@
 import React from "react";
 
-var healthChangeEvent;
-
-//situation states
-var stunStat;
-var setStun;
-var woundLife;
-var setWound;
-
-//damage states
 function DamageRow({ labelName, value, setter }) {
   function increase() {
     setter(value + 1);
@@ -29,28 +20,26 @@ function DamageRow({ labelName, value, setter }) {
   );
 }
 
+function DamageToWound(dmg) {
+  // calculate status here
+  return "your status";
+}
 export function GeneralHealth(props) {
   //situation states
-  stunStat = props.stunStat;
-  setStun = props.setStun;
-  woundLife = props.woundLife;
-  setWound = props.setWound;
+  const { stunStat, setStun, woundLife, setWound } = props;
 
   //damage states
-  let { headDmg, setHeadDmg } = props;
+  const { headDmg, setHeadDmg } = props;
 
   const totalDmgS = headDmg; // + outros
 
   return (
-    <div id="healthContainer" onChange={healthChangeEvent}>
+    <div id="healthContainer">
       <div>
-        <label>Wound Status</label>
-        <label>{woundLife}</label>
-        <button onClick={() => setWound("varvarvar")}>change status</button>
+        <label>Wound Status: {DamageToWound(totalDmgS)}</label>
       </div>
       <div>
-        <label>Total Dmg</label>
-        <label>{totalDmgS}</label>
+        <label>Total Dmg: {totalDmgS}</label>
       </div>
 
       {DamageRow({
