@@ -20,8 +20,9 @@ function DamageRow({ labelName, value, setter }) {
 
   return (
     <div>
-      <label>{labelName}</label>
-      <label>{value}</label>
+      <label>
+        {labelName} {value}
+      </label>
       <button onClick={increase}>+</button>
       <button onClick={decrease}>-</button>
     </div>
