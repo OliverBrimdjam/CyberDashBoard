@@ -1,0 +1,38 @@
+.painelAnimado {
+  width: 100%;
+  height: 100px;
+  background-color: lightgreen;
+  /* transform: translate(-50px, -100px); */
+  transition: height 1s;
+  display: block;
+  position: fixed;
+  top: 50px;
+}
+
+.painelAnimado.hidden {
+  height: 5px;
+}
+
+@media only screen and (max-device-width: 500px) {
+  .painelAnimado {
+    width: 90%;
+    height: 70vh;
+    background-color: lightgreen;
+    /* transform: translate(-50px, -100px); */
+    transition: left 0.9s;
+    /* display: none; */
+
+    position: fixed;
+    right: 0;
+  }
+
+  .painelAnimado.hidden {
+    width: 5px;
+  }
+}
+.painelAnimado2 {
+  width: 100%;
+  height: 300px;
+  background-color: rgb(56, 56, 56);
+  display: none;
+}

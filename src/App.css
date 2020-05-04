@@ -3,7 +3,12 @@
 }
 
 .App-header {
-  min-height: 100vh;
+  min-height: 100px;
   width: 100%;
   background-color: lightgray;
+  position: relative;
+}
+
+main {
+  background-color: lightgrey;
 }
