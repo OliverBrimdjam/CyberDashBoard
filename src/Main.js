@@ -32,6 +32,11 @@ export function GeneralRender(props) {
   const [stunStat, setStun] = React.useState(lifeInfo.stunSituation);
 
   const [headDmg, setHeadDmg] = React.useState(lifeInfo.head);
+  const [torsoDmg, setTorsoDmg] = React.useState(lifeInfo.torso);
+  const [rArmDmg, setRarmDmg] = React.useState(lifeInfo.rArm);
+  const [lArmDmg, setLarmDmg] = React.useState(lifeInfo.lArm);
+  const [rLegDmg, setRlegDmg] = React.useState(lifeInfo.rLeg);
+  const [lLegDmg, setLlegDmg] = React.useState(lifeInfo.lLeg);
 
   return (
     <div>
@@ -45,6 +50,21 @@ export function GeneralRender(props) {
         //damage states
         headDmg={headDmg}
         setHeadDmg={setHeadDmg}
+
+        torsoDmg={torsoDmg}
+        setTorsoDmg={setTorsoDmg}
+
+        rArmDmg={rArmDmg}
+        setRarmDmg={setRarmDmg}
+
+        lArmDmg={lArmDmg}
+        setLarmDmg={setLarmDmg}
+
+        rLegDmg={rLegDmg}
+        setRlegDmg={setRlegDmg}
+        
+        lLegDmg={lLegDmg}
+        setLlegDmg={setLlegDmg}
       />
     </div>
   );

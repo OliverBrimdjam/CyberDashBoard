@@ -29,9 +29,22 @@ export function GeneralHealth(props) {
   const { stunStat, setStun, woundLife, setWound } = props;
 
   //damage states
-  const { headDmg, setHeadDmg } = props;
+  const { 
+    headDmg, 
+    setHeadDmg, 
+    torsoDmg, 
+    setTorsoDmg, 
+    rArmDmg, 
+    setRarmDmg, 
+    lArmDmg, 
+    setLarmDmg,
+    rLegDmg,
+    setRlegDmg,
+    lLegDmg,
+    setLlegDmg
+  } = props;
 
-  const totalDmgS = headDmg; // + outros
+  const totalDmgS = headDmg + torsoDmg + rArmDmg; // + outros
 
   return (
     <div id="healthContainer">
@@ -47,6 +60,38 @@ export function GeneralHealth(props) {
         value: headDmg,
         setter: setHeadDmg,
       })}
+
+      {DamageRow({
+        labelName: "Torso",
+        value: torsoDmg,
+        setter: setTorsoDmg,
+      })}
+
+      {DamageRow({
+        labelName: "R.Arm",
+        value: rArmDmg,
+        setter: setRarmDmg,
+      })}
+
+      {DamageRow({
+        labelName: "L.Arm",
+        value: lArmDmg,
+        setter: setLarmDmg,
+      })}
+
+      {DamageRow({
+        labelName: "R.Leg",
+        value: rLegDmg,
+        setter: setRlegDmg,
+      })}
+
+      {DamageRow({
+        labelName: "L.Leg",
+        value: lLegDmg,
+        setter: setLlegDmg,
+      })}
+
+
     </div>
   );
 }
