@@ -44,7 +44,7 @@ export function GeneralHealth(props) {
     setLlegDmg
   } = props;
 
-  const totalDmgS = headDmg + torsoDmg + rArmDmg; // + outros
+  const totalDmgS = headDmg + torsoDmg + rArmDmg + lArmDmg + rLegDmg + lLegDmg; // + outros
 
   return (
     <div id="healthContainer">
