@@ -1,4 +1,4 @@
- import React from "react";
+import React from "react";
 import "./Main.css";
 import { GeneralHealth } from "./health/HealthPatch";
 
@@ -32,43 +32,20 @@ export function GeneralRender(props) {
   const [stunStat, setStun] = React.useState(lifeInfo.stunSituation);
 
   const [headDmg, setHeadDmg] = React.useState(lifeInfo.head);
-  const [torsoDmg, setTorsoDmg] = React.useState(lifeInfo.torso);
-  const [rArmDmg, setRarmDmg] = React.useState(lifeInfo.rArm);
-  const [lArmDmg, setLarmDmg] = React.useState(lifeInfo.lArm);
-  const [rLegDmg, setRlegDmg] = React.useState(lifeInfo.rLeg);
-  const [lLegDmg, setLlegDmg] = React.useState(lifeInfo.lLeg);
 
-  
-  return(
+  return (
     <div>
-      
-      <GeneralHealth 
-        lifeInfo={lifeInfo}//big object life data
-
+      <GeneralHealth
+        lifeInfo={lifeInfo} //big object life data
         //situation states
         stunStat={stunStat}
         setStun={setStun}
         woundLife={woundLife}
         setWound={setWound}
-
         //damage states
         headDmg={headDmg}
         setHeadDmg={setHeadDmg}
-        torsoDmg={torsoDmg}
-        setTorsoDmg={setTorsoDmg}
-        rArmDmg={rArmDmg}
-        setRarmDmg={setRarmDmg}
-        lArmDmg={lArmDmg}
-        setLarmDmg={setLarmDmg}
-        rLegDmg={rLegDmg}
-        setRlegDmg={setRlegDmg}
-        lLegDmg={lLegDmg}
-        setLlegDmg={setLlegDmg}
       />
     </div>
   );
 }
-
-
-
-
