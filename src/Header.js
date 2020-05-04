@@ -49,9 +49,19 @@ function HeaderBar() {
   );
 }
 
+function MetaInfo() {
+  return (
+    <head>
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width" />
+    </head>
+  );
+}
+
 export function CompleteMenu() {
   return (
     <div className="Header__CompleteMenu">
+      <MetaInfo />
       <LogoG />
       <MenuIcon />
       <MenuBlock />
