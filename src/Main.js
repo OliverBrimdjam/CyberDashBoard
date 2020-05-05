@@ -28,7 +28,7 @@ export function toggleMenu() {
 export function GeneralRender(props) {
   lifeInfo = props.lifeInfo;
 
-  const [woundLife, setWound] = React.useState(lifeInfo.wound);
+  const [woundStat, setWound] = React.useState(lifeInfo.wound);
   const [stunStat, setStun] = React.useState(lifeInfo.stunSituation);
 
   const [headDmg, setHeadDmg] = React.useState(lifeInfo.head);
@@ -45,7 +45,7 @@ export function GeneralRender(props) {
         //situation states
         stunStat={stunStat}
         setStun={setStun}
-        woundLife={woundLife}
+        woundStat={woundStat}
         setWound={setWound}
         //damage states
         headDmg={headDmg}
