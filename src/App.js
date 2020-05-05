@@ -1,17 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { CompleteMenu } from "./Header";
-import { Teste } from "./health/life";
 import { GeneralRender } from "./Main";
-
-
-var shotInfo = {
-  dmg: 14,
-  bodyPlace: "l.leg",
-  profile: 1,
-  shotType: "normal",
-  btm: 4,
-};
 
 var lifeInfo = {
   mortalSituation: "normal",
@@ -38,7 +28,6 @@ class App extends Component {
           <CompleteMenu />
         </header>
         <main>
-          <Teste lifePath={shotInfo} />
           <GeneralRender lifeInfo={lifeInfo}/>
         </main>
       </div>
