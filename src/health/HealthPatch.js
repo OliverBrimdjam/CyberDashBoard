@@ -1,25 +1,5 @@
 import React from "react";
 
-// function DamageRow({ labelName, value, setter}) {
-//   function increase() {
-//     setter(value + 1);
-//   }
-
-//   function decrease() {
-//     setter(value - 1);
-//   }
-
-//   return (
-//     <div>
-//       <label>
-//         {labelName} {value}
-//       </label>
-//       <button onClick={increase}>+</button>
-//       <button onClick={decrease}>-</button>
-//     </div>
-//   );
-// }
-
 function DamageToWound(dmg) {
   // calculate status here
 
@@ -34,21 +14,21 @@ function DamageToWound(dmg) {
     "Mortal 4",
     "Mortal 5",
     "Mortal 6"
-  ]
+  ];
 
-  const stuns = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+  const stuns = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9];
 
-  let dmgConstant;
+  let dmgConstant = 0;
   let wound_stun;
 
   if (dmg === 0){
     wound_stun = {
-      wound: wounds[0],
+      wound: "normal",
       stun: stuns[0]
     }
   }else{
-    
-    if ((dmg % 4) === 0){
+    let dmgModulus = (dmg % 4);
+    if (dmgModulus === 0){
       
       dmgConstant = (dmg/4)-1;
       if (dmgConstant<0){ dmgConstant = 0;}
@@ -62,7 +42,7 @@ function DamageToWound(dmg) {
       stun: stuns[dmgConstant]
     }
   }
-  debugger;
+  
   return wound_stun;
 }
 export function GeneralHealth(props) {
@@ -89,25 +69,19 @@ export function GeneralHealth(props) {
 
   function DamageRow({ labelName, value, setter}) {
 
-    let fff;
+    let fff= DamageToWound(totalDmgS);
+
     function increase() {
       setter(value + 1);
-      fff = DamageToWound(totalDmgS);
-
-      console.log(fff.stun);
-
-      setWound(fff.wound);
-      setStun(fff.stun);
     }
   
     function decrease() {
       setter(value - 1);
-      fff = DamageToWound(totalDmgS);
-
-      setWound(fff.wound);
-      setStun(fff.stun);
     }
   
+    setWound(fff.wound);
+    setStun(fff.stun);
+
     return (
       <div>
         <label>
@@ -122,7 +96,9 @@ export function GeneralHealth(props) {
   return (
     <div id="healthContainer">
       <div>
-        <label>Wound Status: {woundStat}</label> <br/>
+        <label>Wound Status: {woundStat}</label>
+      </div>
+      <div>
         <label>Stun Status: {stunStat}</label>
       </div>
       <div>
