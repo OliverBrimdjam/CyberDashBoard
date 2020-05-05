@@ -1,30 +1,29 @@
 import React from "react";
 
-function DamageRow({ labelName, value, setter, stun, wound }) {
-  function increase() {
-    setter(value + 1);
-  }
+// function DamageRow({ labelName, value, setter}) {
+//   function increase() {
+//     setter(value + 1);
+//   }
 
-  function decrease() {
-    setter(value - 1);
-  }
+//   function decrease() {
+//     setter(value - 1);
+//   }
 
-  return (
-    <div>
-      <label>
-        {labelName} {value}
-      </label>
-      <button onClick={increase}>+</button>
-      <button onClick={decrease}>-</button>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <label>
+//         {labelName} {value}
+//       </label>
+//       <button onClick={increase}>+</button>
+//       <button onClick={decrease}>-</button>
+//     </div>
+//   );
+// }
 
 function DamageToWound(dmg) {
   // calculate status here
 
   const wounds = [
-    "Normal", 
     "Light", 
     "Serius", 
     "Critical", 
@@ -40,18 +39,30 @@ function DamageToWound(dmg) {
   const stuns = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
 
   let dmgConstant;
+  let wound_stun;
 
-  if ((dmg % 4) == 0){
-    dmgConstant = (dmg/4)-1;
+  if (dmg === 0){
+    wound_stun = {
+      wound: wounds[0],
+      stun: stuns[0]
+    }
   }else{
-    dmgConstant = parseInt(dmg/4);
+    
+    if ((dmg % 4) === 0){
+      
+      dmgConstant = (dmg/4)-1;
+      if (dmgConstant<0){ dmgConstant = 0;}
+    }else{
+      
+      dmgConstant = parseInt(dmg/4);
+    }
+    
+    wound_stun = {
+      wound: wounds[dmgConstant],
+      stun: stuns[dmgConstant]
+    }
   }
-
-  const wound_stun = {
-    wound: wounds[dmgConstant],
-    stun: stuns[dmgConstant]
-  }
-
+  debugger;
   return wound_stun;
 }
 export function GeneralHealth(props) {
