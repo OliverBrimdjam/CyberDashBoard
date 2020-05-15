@@ -68,7 +68,6 @@ export function GeneralHealth(props) {
   const totalDmgS = headDmg + torsoDmg + rArmDmg + lArmDmg + rLegDmg + lLegDmg; // + outros
 
   function DamageRow({ labelName, value, setter}) {
-
     let fff= DamageToWound(totalDmgS);
 
     function increase() {
@@ -140,8 +139,6 @@ export function GeneralHealth(props) {
         value: lLegDmg,
         setter: setLlegDmg,
       })}
-
-
     </div>
   );
 }

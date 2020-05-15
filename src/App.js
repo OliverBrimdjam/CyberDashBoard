@@ -18,6 +18,20 @@ var lifeInfo = {
   lLeg: 0
 }
 
+var statsInfo = {
+  int: 4,
+  refBase: 5,
+  refInst: 6,
+  tech: 4,
+  cool: 3,
+  attr: 4,
+  luck: 4,
+  MA: 7,
+  body: 4,
+  EmpBase: 8,
+  EmpInst: 6
+}
+
 console.log("App:" + lifeInfo.torso);
 
 class App extends Component {
@@ -28,7 +42,7 @@ class App extends Component {
           <CompleteMenu />
         </header>
         <main>
-          <GeneralRender lifeInfo={lifeInfo}/>
+          <GeneralRender lifeInfo={lifeInfo} statsInfo={statsInfo}/>
         </main>
       </div>
     );
