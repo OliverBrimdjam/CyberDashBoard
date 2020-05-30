@@ -41,51 +41,58 @@ export function GeneralRender(props) {
 
   return (
     <div>
-      <GeneralStats 
-        intStat={intStat}
-        setInt={setInt}
-        refBaseStat={refBaseStat}
-        setRefBase={setRefBase}
-        refInstStat={refInstStat}
-        setRefInst={setRefInst}
-        techStat={techStat}
-        setTech={setTech}
-        coolStat={coolStat}
-        setCool={setCool}
-        attrStat={attrStat}
-        setAttr={setAttr}
-        luckStat={luckStat}
-        setLuck={setLuck}
-        MAStat={MAStat}
-        setMA={setMA}
-        bodyStat={bodyStat}
-        setBody={setBody}
-        EmpBaseStat={EmpBaseStat}
-        setEmpBase={setEmpBase}
-        EmpInstStat={EmpInstStat}
-        setEmpInst={setEmpInst}
-      />
-      <GeneralHealth
-        lifeInfo={lifeInfo} //big object life data
-        //situation states
-        stunStat={stunStat}
-        setStun={setStun}
-        woundStat={woundStat}
-        setWound={setWound}
-        //damage states
-        headDmg={headDmg}
-        setHeadDmg={setHeadDmg}
-        torsoDmg={torsoDmg}
-        setTorsoDmg={setTorsoDmg}
-        rArmDmg={rArmDmg}
-        setRarmDmg={setRarmDmg}
-        lArmDmg={lArmDmg}
-        setLarmDmg={setLarmDmg}
-        rLegDmg={rLegDmg}
-        setRlegDmg={setRlegDmg}
-        lLegDmg={lLegDmg}
-        setLlegDmg={setLlegDmg}
-      />
+      <div class="statBlock">
+        <GeneralStats 
+          intStat={intStat}
+          setInt={setInt}
+          refBaseStat={refBaseStat}
+          setRefBase={setRefBase}
+          refInstStat={refInstStat}
+          setRefInst={setRefInst}
+          techStat={techStat}
+          setTech={setTech}
+          coolStat={coolStat}
+          setCool={setCool}
+          attrStat={attrStat}
+          setAttr={setAttr}
+          luckStat={luckStat}
+          setLuck={setLuck}
+          MAStat={MAStat}
+          setMA={setMA}
+          bodyStat={bodyStat}
+          setBody={setBody}
+          EmpBaseStat={EmpBaseStat}
+          setEmpBase={setEmpBase}
+          EmpInstStat={EmpInstStat}
+          setEmpInst={setEmpInst}
+        />
+      </div>
+      <div class="healthBlock">
+        <GeneralHealth
+          //big object life data
+          lifeInfo={lifeInfo} 
+          //situation states
+          stunStat={stunStat}
+          setStun={setStun}
+          woundStat={woundStat}
+          setWound={setWound}
+          //damage states
+          headDmg={headDmg}
+          setHeadDmg={setHeadDmg}
+          torsoDmg={torsoDmg}
+          setTorsoDmg={setTorsoDmg}
+          rArmDmg={rArmDmg}
+          setRarmDmg={setRarmDmg}
+          lArmDmg={lArmDmg}
+          setLarmDmg={setLarmDmg}
+          rLegDmg={rLegDmg}
+          setRlegDmg={setRlegDmg}
+          lLegDmg={lLegDmg}
+          setLlegDmg={setLlegDmg}
+          //stats states
+          bodyStat={bodyStat}
+        />
+      </div>
     </div>
   );
 }

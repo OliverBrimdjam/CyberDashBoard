@@ -1,23 +1,21 @@
 import React from "react";
+import './HealthPatch.css';
+
 
 function DamageToWound(dmg) {
-  // calculate status here
-
   const wounds = [
     "Light", 
     "Serius", 
     "Critical", 
-    "Mortal 0", 
-    "Mortal 1",
-    "Mortal 2",
-    "Mortal 3",
-    "Mortal 4",
-    "Mortal 5",
-    "Mortal 6"
+    "Mortal", //need to redo this function to fix this lot of "Mortal"
+    "Mortal",
+    "Mortal",
+    "Mortal",
+    "Mortal",
+    "Mortal",
+    "Mortal"
   ];
-
   const stuns = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9];
-
   let dmgConstant = 0;
   let wound_stun;
 
@@ -42,12 +40,11 @@ function DamageToWound(dmg) {
       stun: stuns[dmgConstant]
     }
   }
-  
   return wound_stun;
 }
 export function GeneralHealth(props) {
   //situation states
-  const { stunStat, setStun, woundStat, setWound } = props;
+  const { stunStat, setStun, woundStat, setWound, bodyStat } = props;
 
   //damage states
   const { 
@@ -67,6 +64,35 @@ export function GeneralHealth(props) {
 
   const totalDmgS = headDmg + torsoDmg + rArmDmg + lArmDmg + rLegDmg + lLegDmg; // + outros
 
+  let btm = 0;
+  let btmLabel = "";
+  switch (bodyStat){
+    case bodyStat <= 2:
+      btm = 0;
+      btmLabel = "Very Weak";
+      break;
+    case bodyStat >= 3 && bodyStat <= 4:
+      btm = -1;
+      btmLabel = "Weak";
+      break;
+    case bodyStat >= 5 && bodyStat <= 7:
+      btm = -2;
+      btmLabel = "Average";
+      break;
+    case bodyStat >= 8 && bodyStat <= 9:
+      btm = -3;
+      btmLabel = "Strong";
+      break;
+    case bodyStat === 10:
+      btm = -4;
+      btmLabel = "Very Strong";
+      break;
+    default:
+      btm = -5;
+      btmLabel = "Superhuman";
+      break;
+  }
+
   function DamageRow({ labelName, value, setter}) {
     let fff= DamageToWound(totalDmgS);
 
@@ -82,63 +108,80 @@ export function GeneralHealth(props) {
     setStun(fff.stun);
 
     return (
-      <div>
-        <label>
-          {labelName} {value}
-        </label>
-        <button onClick={increase}>+</button>
-        <button onClick={decrease}>-</button>
+      <div class="damageBlock">
+        <div class="damageBlock__brick1">
+          <label class="damageBlock__brick1__name">
+            {labelName} 
+          </label>
+          <label class="damageBlock__brick1__value">
+            {value}
+          </label>
+        </div>
+        <div class="damageBlock__brick2">
+          <button class="damageBlock__brick2__button" onClick={increase}>+</button>
+          <button class="damageBlock__brick2__button" onClick={decrease}>-</button>
+        </div>
       </div>
     );
   }
 
   return (
     <div id="healthContainer">
-      <div>
-        <label>Wound Status: {woundStat}</label>
+      <div class="panelStats">
+        <div class="panelStats__block">
+          <label class="panelStats__block__label">Wound</label>
+          <label class="panelStats__block__value2">{woundStat}</label>
+        </div>
+        <div class="panelStats__block">
+          <label class="panelStats__block__label">Stun</label>
+          <label class="panelStats__block__value" >{stunStat}</label>
+        </div>
+        <div class="panelStats__block">
+          <label class="panelStats__block__label">Total</label>
+          <label class="panelStats__block__value">{totalDmgS}</label>
+        </div>
+        <div class="panelStats__block">
+          <label class="panelStats__block__label">BTM</label>
+          <label class="panelStats__block__value">{btm}</label>
+        </div>
       </div>
       <div>
-        <label>Stun Status: {stunStat}</label>
+        {DamageRow({
+          labelName: "Head",
+          value: headDmg,
+          setter: setHeadDmg,
+        })}
+
+        {DamageRow({
+          labelName: "Torso",
+          value: torsoDmg,
+          setter: setTorsoDmg,
+        })}
+
+        {DamageRow({
+          labelName: "R.Arm",
+          value: rArmDmg,
+          setter: setRarmDmg,
+        })}
+
+        {DamageRow({
+          labelName: "L.Arm",
+          value: lArmDmg,
+          setter: setLarmDmg,
+        })}
+
+        {DamageRow({
+          labelName: "R.Leg",
+          value: rLegDmg,
+          setter: setRlegDmg,
+        })}
+
+        {DamageRow({
+          labelName: "L.Leg",
+          value: lLegDmg,
+          setter: setLlegDmg,
+        })}
       </div>
-      <div>
-        <label>Total Dmg: {totalDmgS}</label>
-      </div>
-
-      {DamageRow({
-        labelName: "Head",
-        value: headDmg,
-        setter: setHeadDmg,
-      })}
-
-      {DamageRow({
-        labelName: "Torso",
-        value: torsoDmg,
-        setter: setTorsoDmg,
-      })}
-
-      {DamageRow({
-        labelName: "R.Arm",
-        value: rArmDmg,
-        setter: setRarmDmg,
-      })}
-
-      {DamageRow({
-        labelName: "L.Arm",
-        value: lArmDmg,
-        setter: setLarmDmg,
-      })}
-
-      {DamageRow({
-        labelName: "R.Leg",
-        value: rLegDmg,
-        setter: setRlegDmg,
-      })}
-
-      {DamageRow({
-        labelName: "L.Leg",
-        value: lLegDmg,
-        setter: setLlegDmg,
-      })}
     </div>
   );
 }

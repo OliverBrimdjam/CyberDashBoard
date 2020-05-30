@@ -1,4 +1,5 @@
 import React from "react";
+import "./StatsPath.css";
 
 export function GeneralStats(props){
 
@@ -37,23 +38,28 @@ export function GeneralStats(props){
             setter(value - 1);
         }
 
-        console.log("carregou a cell")
+        
         return(
-            <div>
-                <label>{ labelName }</label>
-                <label>{value}</label>
-                <button onClick={increase} >+</button>
-                <button onClick={decrease} >-</button>
+            <div class="statsBlock">
+                <div class="statsBlock__brick1">
+                    <label class="statsBlock__brick1__name">{ labelName }</label>
+                    <label class="statsBlock__brick1__value">{value}</label>
+                </div>
+                <div class="statsBlock__brick2">
+                    <button class="statsBlock__brick2__button" onClick={increase}>+</button>
+                    <button class="statsBlock__brick2__button" onClick={decrease}>-</button>
+                </div>
             </div>
         );
     }
-    
-    console.log("carregou o stat completo")
 
     return(
 
         <div id="statsContainter">
-            <label>Stats</label>
+            <div>
+                <label>Stats</label>
+            </div>
+            <div>
             {StatRow({
                 labelName: "INT",
                 value: intStat,
@@ -100,16 +106,16 @@ export function GeneralStats(props){
                 setter: setBody
             })}
             {StatRow({
-                labelName: "EMP B",
+                labelName: "EMP b",
                 value: EmpBaseStat,
                 setter: setEmpBase
             })}
             {StatRow({
-                labelName: "EMP I",
+                labelName: "EMP i",
                 value: EmpInstStat,
                 setter: setEmpInst
             })}
-
+            </div>
             
         </div>
     );
