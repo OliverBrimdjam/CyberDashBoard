@@ -64,34 +64,31 @@ export function GeneralHealth(props) {
 
   const totalDmgS = headDmg + torsoDmg + rArmDmg + lArmDmg + rLegDmg + lLegDmg; // + outros
 
+
   let btm = 0;
   let btmLabel = "";
-  switch (bodyStat){
-    case bodyStat <= 2:
+
+  if (bodyStat <= 2){
       btm = 0;
       btmLabel = "Very Weak";
-      break;
-    case bodyStat >= 3 && bodyStat <= 4:
+  }else if (bodyStat >= 3 && bodyStat <= 4){
       btm = -1;
       btmLabel = "Weak";
-      break;
-    case bodyStat >= 5 && bodyStat <= 7:
-      btm = -2;
-      btmLabel = "Average";
-      break;
-    case bodyStat >= 8 && bodyStat <= 9:
-      btm = -3;
-      btmLabel = "Strong";
-      break;
-    case bodyStat === 10:
-      btm = -4;
-      btmLabel = "Very Strong";
-      break;
-    default:
-      btm = -5;
-      btmLabel = "Superhuman";
-      break;
+  }else if (bodyStat >= 5 && bodyStat <= 7){
+    btm = -2;
+    btmLabel = "Average";
+  }else if (bodyStat >= 8 && bodyStat <= 9){
+    btm = -3;
+    btmLabel = "Strong";
+  }else if (bodyStat === 10){
+    btm = -4;
+    btmLabel = "Very Strong";
+  }else{
+    btm = -5;
+    btmLabel = "Superhuman";
   }
+
+    
 
   function DamageRow({ labelName, value, setter}) {
     let fff= DamageToWound(totalDmgS);
