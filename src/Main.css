@@ -36,3 +36,14 @@
   background-color: rgb(56, 56, 56);
   display: none;
 }
+
+/* -------containers-------- */
+.statBlock{
+  width: 41%;
+  border: 1px solid black;
+}
+
+.healthBlock{
+  border: 1px solid black;
+  
+}
