@@ -1,19 +1,11 @@
 import React from "react";
-import "./StatsPath.css";
+import "./StatsPatch.css";
 
 export function GeneralStats(props){
 
     const { mainState, setMainState } = props;
 
     function StatRow({labelName, value, setter}){
-
-        // const increase = () => {
-        //     setter(value + 1);
-        // }
-
-        // const decrease = () => {
-        //     setter(value - 1);
-        // }
 
         function increase () {
             setMainState(prevState => {
@@ -26,7 +18,6 @@ export function GeneralStats(props){
             });
         }
 
-        
         return(
             <div class="statsBlock">
                 <div class="statsBlock__brick1">

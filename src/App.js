@@ -31,8 +31,6 @@ var generalState = {
   "EmpInst": 6
 };
 
-
-
 export function App(){
   const [mainState, setMainState] = React.useState(generalState);
 

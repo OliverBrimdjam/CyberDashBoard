@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './HealthPatch.css';
 
 
@@ -49,13 +49,10 @@ function DamageToWound(dmg) {
 export function GeneralHealth(props) {
   const { mainState, setMainState } = props;
 
-
-  
   const totalDmgS = mainState.head + mainState.torso + mainState.rArm + mainState.lArm + mainState.rLeg + mainState.lLeg; // + outros
 
-
   let btm = 0;
-  let btmLabel = "";
+  let btmLabel;
 
   if (mainState.bodyStat <= 2){
       btm = 0;
@@ -76,9 +73,7 @@ export function GeneralHealth(props) {
     btm = -5;
     btmLabel = "Superhuman";
   }
-
     ////////////////////////////////////////////////////////////////////////
-
   function DamageRow({ labelName, value, setter}) {
     let fff= DamageToWound(totalDmgS);
 
@@ -103,8 +98,6 @@ export function GeneralHealth(props) {
           }
       });
     }
-
-
 
     return (
       <div class="damageBlock">
@@ -142,6 +135,10 @@ export function GeneralHealth(props) {
         <div class="panelStats__block">
           <label class="panelStats__block__label">BTM</label>
           <label class="panelStats__block__value">{btm}</label>
+        </div>
+        <div class="panelStats__block">
+          <label class="panelStats__block__label">BT</label>
+          <label class="panelStats__block__value2">{btmLabel}</label>
         </div>
       </div>
       <div>

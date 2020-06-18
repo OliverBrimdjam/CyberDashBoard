@@ -1,9 +1,7 @@
 import React from "react";
 import "./Main.css";
 import { GeneralHealth } from "./health/HealthPatch";
-import { GeneralStats } from "./Stats/StatsPath";
-
-
+import { GeneralStats } from "./Stats/StatsPatch";
 
 export function toggleMenu() {
   document
@@ -13,12 +11,6 @@ export function toggleMenu() {
 
 export function Main(props) {
   const { mainState, setMainState } = props;
-
-  // const mainState = props.mainState;
-  // const setMainState = props.setMainState;
-
-  // const mainState = props;
-  // const setMainState = props;
 
   return (
     <div>
