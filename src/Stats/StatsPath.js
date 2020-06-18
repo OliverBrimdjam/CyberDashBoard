@@ -3,39 +3,27 @@ import "./StatsPath.css";
 
 export function GeneralStats(props){
 
-    const {
-        intStat,
-        setInt,
-        refBaseStat,
-        setRefBase,
-        refInstStat,
-        setRefInst,
-        techStat,
-        setTech,
-        coolStat,
-        setCool,
-        attrStat,
-        setAttr,
-        luckStat,
-        setLuck,
-        MAStat,
-        setMA,
-        bodyStat,
-        setBody,
-        EmpBaseStat,
-        setEmpBase,
-        EmpInstStat,
-        setEmpInst
-    } = props;
+    const { mainState, setMainState } = props;
 
     function StatRow({labelName, value, setter}){
 
-        const increase = () => {
-            setter(value + 1);
-        }
+        // const increase = () => {
+        //     setter(value + 1);
+        // }
 
-        const decrease = () => {
-            setter(value - 1);
+        // const decrease = () => {
+        //     setter(value - 1);
+        // }
+
+        function increase () {
+            setMainState(prevState => {
+                return {...prevState, [setter]: value + 1 }
+            });
+        }
+        function decrease (){
+            setMainState(prevState => {
+                return {...prevState, [setter]: value - 1}
+            });
         }
 
         
@@ -62,58 +50,58 @@ export function GeneralStats(props){
             <div>
             {StatRow({
                 labelName: "INT",
-                value: intStat,
-                setter: setInt
+                value: mainState.int,
+                setter: "int"
             })}
             {StatRow({
                 labelName: "REF b",
-                value: refBaseStat,
-                setter: setRefBase
+                value: mainState.refBase,
+                setter: "refBase"
             })}
             {StatRow({
                 labelName: "REF i",
-                value: refInstStat,
-                setter: setRefInst
+                value: mainState.refInst,
+                setter: "refInst"
             })}
             {StatRow({
                 labelName: "TECH",
-                value: techStat,
-                setter: setTech
+                value: mainState.tech,
+                setter: "tech"
             })}
             {StatRow({
                 labelName: "COOL",
-                value: coolStat,
-                setter: setCool
+                value: mainState.cool,
+                setter: "cool"
             })}
             {StatRow({
                 labelName: "ATTR",
-                value: attrStat,
-                setter: setAttr
+                value: mainState.attr,
+                setter: "attr"
             })}
             {StatRow({
                 labelName: "LUCK",
-                value: luckStat,
-                setter: setLuck
+                value: mainState.luck,
+                setter: "luck"
             })}
             {StatRow({
                 labelName: "MA",
-                value: MAStat,
-                setter: setMA
+                value: mainState.MA,
+                setter: "MA"
             })}
             {StatRow({
                 labelName: "BODY",
-                value: bodyStat,
-                setter: setBody
+                value: mainState.body,
+                setter: "body"
             })}
             {StatRow({
                 labelName: "EMP b",
-                value: EmpBaseStat,
-                setter: setEmpBase
+                value: mainState.EmpBase,
+                setter: "EmpBase"
             })}
             {StatRow({
                 labelName: "EMP i",
-                value: EmpInstStat,
-                setter: setEmpInst
+                value: mainState.EmpInst,
+                setter: "EmpInst"
             })}
             </div>
             

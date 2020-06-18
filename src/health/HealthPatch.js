@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './HealthPatch.css';
 
 
 function DamageToWound(dmg) {
+  
   const wounds = [
     "Light", 
     "Serius", 
     "Critical", 
-    "Mortal", //need to redo this function to fix this lot of "Mortal"
+    "Mortal", //need to redo this function to fix this a lot of "Mortal"
     "Mortal",
     "Mortal",
     "Mortal",
@@ -39,48 +40,36 @@ function DamageToWound(dmg) {
       wound: wounds[dmgConstant],
       stun: stuns[dmgConstant]
     }
+    
   }
   return wound_stun;
 }
+
+////////////////////////////////////////////////////////////////////////
 export function GeneralHealth(props) {
-  //situation states
-  const { stunStat, setStun, woundStat, setWound, bodyStat } = props;
+  const { mainState, setMainState } = props;
 
-  //damage states
-  const { 
-    headDmg, 
-    setHeadDmg, 
-    torsoDmg, 
-    setTorsoDmg, 
-    rArmDmg, 
-    setRarmDmg, 
-    lArmDmg, 
-    setLarmDmg,
-    rLegDmg,
-    setRlegDmg,
-    lLegDmg,
-    setLlegDmg
-  } = props;
 
-  const totalDmgS = headDmg + torsoDmg + rArmDmg + lArmDmg + rLegDmg + lLegDmg; // + outros
+  
+  const totalDmgS = mainState.head + mainState.torso + mainState.rArm + mainState.lArm + mainState.rLeg + mainState.lLeg; // + outros
 
 
   let btm = 0;
   let btmLabel = "";
 
-  if (bodyStat <= 2){
+  if (mainState.bodyStat <= 2){
       btm = 0;
       btmLabel = "Very Weak";
-  }else if (bodyStat >= 3 && bodyStat <= 4){
+  }else if (mainState.body >= 3 && mainState.body <= 4){
       btm = -1;
       btmLabel = "Weak";
-  }else if (bodyStat >= 5 && bodyStat <= 7){
+  }else if (mainState.body >= 5 && mainState.body <= 7){
     btm = -2;
     btmLabel = "Average";
-  }else if (bodyStat >= 8 && bodyStat <= 9){
+  }else if (mainState.body >= 8 && mainState.body <= 9){
     btm = -3;
     btmLabel = "Strong";
-  }else if (bodyStat === 10){
+  }else if (mainState.body === 10){
     btm = -4;
     btmLabel = "Very Strong";
   }else{
@@ -88,21 +77,34 @@ export function GeneralHealth(props) {
     btmLabel = "Superhuman";
   }
 
-    
+    ////////////////////////////////////////////////////////////////////////
 
   function DamageRow({ labelName, value, setter}) {
     let fff= DamageToWound(totalDmgS);
 
     function increase() {
-      setter(value + 1);
+      setMainState(prevState => {
+          return { 
+              ...prevState,
+              [setter]: value + 1,
+              "stunNumber": fff.stun,
+              "wound": fff.wound
+              }
+      });
     }
   
     function decrease() {
-      setter(value - 1);
+      setMainState(prevState => {
+          return { 
+            ...prevState,
+            [setter]: value - 1,
+            "stunNumber": fff.stun,
+            "wound": fff.wound
+          }
+      });
     }
-  
-    setWound(fff.wound);
-    setStun(fff.stun);
+
+
 
     return (
       <div class="damageBlock">
@@ -127,11 +129,11 @@ export function GeneralHealth(props) {
       <div class="panelStats">
         <div class="panelStats__block">
           <label class="panelStats__block__label">Wound</label>
-          <label class="panelStats__block__value2">{woundStat}</label>
+          <label class="panelStats__block__value2">{mainState.wound}</label>
         </div>
         <div class="panelStats__block">
           <label class="panelStats__block__label">Stun</label>
-          <label class="panelStats__block__value" >{stunStat}</label>
+          <label class="panelStats__block__value" >{mainState.stunNumber}</label>
         </div>
         <div class="panelStats__block">
           <label class="panelStats__block__label">Total</label>
@@ -145,38 +147,38 @@ export function GeneralHealth(props) {
       <div>
         {DamageRow({
           labelName: "Head",
-          value: headDmg,
-          setter: setHeadDmg,
+          value: mainState.head,
+          setter: "head"
         })}
 
         {DamageRow({
           labelName: "Torso",
-          value: torsoDmg,
-          setter: setTorsoDmg,
+          value: mainState.torso,
+          setter: "torso",
         })}
 
         {DamageRow({
           labelName: "R.Arm",
-          value: rArmDmg,
-          setter: setRarmDmg,
+          value: mainState.rArm,
+          setter: "rArm",
         })}
 
         {DamageRow({
           labelName: "L.Arm",
-          value: lArmDmg,
-          setter: setLarmDmg,
+          value: mainState.lArm,
+          setter: "lArm",
         })}
 
         {DamageRow({
           labelName: "R.Leg",
-          value: rLegDmg,
-          setter: setRlegDmg,
+          value: mainState.rLeg,
+          setter: "rLeg",
         })}
 
         {DamageRow({
           labelName: "L.Leg",
-          value: lLegDmg,
-          setter: setLlegDmg,
+          value: mainState.lLeg,
+          setter: "lLeg",
         })}
       </div>
     </div>
