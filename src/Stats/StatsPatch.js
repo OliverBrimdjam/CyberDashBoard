@@ -38,7 +38,7 @@ export function GeneralStats(props){
             <div>
                 <label>Stats</label>
             </div>
-            <div>
+            <div class="statsContainer2">
             {StatRow({
                 labelName: "INT",
                 value: mainState.int,

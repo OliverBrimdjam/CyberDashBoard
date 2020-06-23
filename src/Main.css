@@ -36,14 +36,38 @@
   background-color: rgb(56, 56, 56);
   display: none;
 }
+/* /////sessions///// */
 
-/* -------containers-------- */
-.statBlock{
-  width: 41%;
-  border: 1px solid black;
+.mainBlock__session1{
+  display: flex;
+  flex-direction: column;
+  width: 49.9%;
 }
 
-.healthBlock{
+/* /////Blocks////// */
+.mainBlock{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mainBlock__session1__statBlock{
+  /* width: 50%; */
   border: 1px solid black;
+  min-width: 320px;
   
 }
+.mainBlock__session1__healthBlock{
+  border: 1px solid black;
+  /* width: 50%; */
+  min-width: 320px;
+  
+}
+.mainBlock__shapeBlock {
+  border: 1px solid black;
+  width: 49.9%;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+}
+
+

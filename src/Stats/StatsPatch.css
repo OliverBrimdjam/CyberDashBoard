@@ -1,8 +1,22 @@
+.statsContainer2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .statsBlock{
-    /* background-color: white; */
     display: inline-block;
     margin: 1%;
     
+}
+@media only screen and (max-device-width: 500px) {
+    .statsBlock{
+        display: inline-block;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 4%;
+        margin-bottom: 4%;       
+    }
 }
 
 .statsBlock__brick1{

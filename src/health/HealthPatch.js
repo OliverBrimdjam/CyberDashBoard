@@ -141,7 +141,7 @@ export function GeneralHealth(props) {
           <label class="panelStats__block__value2">{btmLabel}</label>
         </div>
       </div>
-      <div>
+      <div class="healthContainer__healthContainer2">
         {DamageRow({
           labelName: "Head",
           value: mainState.head,

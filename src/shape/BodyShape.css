@@ -1,0 +1,11 @@
+.shapeContainer {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+.shapeContainer__img {
+    width: 50%;
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
