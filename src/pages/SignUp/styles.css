@@ -62,7 +62,8 @@ img{
   color: #ffffff;
   border: 0;
 
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-family: 'goldman', sans-serif;
 }
 
 .inputContainer__input:focus {
@@ -74,6 +75,28 @@ img{
   color: #94acbb;
 }
 
-.confirm {
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 
+
+  width: 120px;
+  height: 50px;
+
+  background: url('../../assets/inputs/input_1.png') no-repeat center;
+  background-size: 100% 100%;
+}
+
+.confirm {
+  width: 100px;
+  height: 30px;
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+
+  margin: 0 5px 10px 0;
+
+  font-family: 'goldman', sans-serif;
+  font-size: 1rem;
 }

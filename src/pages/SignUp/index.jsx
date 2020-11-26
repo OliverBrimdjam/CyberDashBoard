@@ -38,9 +38,11 @@ const SignUp = () => {
               placeholder="Confirmar Senha"
             />
           </div>
-          <button type="submit" className="confirm">
-            Cadastrar
-          </button>
+          <div className="buttonContainer">
+            <button type="submit" className="confirm">
+              Cadastrar
+            </button>
+          </div>
         </form>
       </section>
       <section className="wallpaper" />
