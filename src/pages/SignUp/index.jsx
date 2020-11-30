@@ -44,11 +44,17 @@ const SignUp = () => {
           <InputT1 placeHolder="Email" type="email" />
           <InputT1 placeHolder="Password" type="password" />
           <InputT1 placeHolder="Repeat Password" type="password" />
-
-          <div className="buttonContainer">
-            <button type="submit" className="confirm">
-              Cadastrar
-            </button>
+          <div className="buttonPack">
+            <div className="buttonContainer">
+              <button type="submit" className="confirm">
+                SignIn
+              </button>
+            </div>
+            <div className="buttonContainer">
+              <button type="submit" className="confirm">
+                SignUp
+              </button>
+            </div>
           </div>
         </form>
       </section>

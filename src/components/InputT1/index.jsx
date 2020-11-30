@@ -1,10 +1,6 @@
 import React from 'react';
 import './styles.css';
-
-interface propInput {
-  type: 'string',
-  placeHolder: 'string'
-}
+import PropTypes from 'prop-types';
 
 const InputT1 = ({ placeHolder, type }) => {
   // const { placeHolder, type } = props;
@@ -18,6 +14,11 @@ const InputT1 = ({ placeHolder, type }) => {
       />
     </div>
   );
+};
+
+InputT1.propTypes = {
+  placeHolder: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default InputT1;
