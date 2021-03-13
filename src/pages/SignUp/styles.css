@@ -18,12 +18,12 @@ img{
   max-width: 400px;
 }
 
-.logo {
+.main__content__logo {
   width: 90%;
   margin: 20px 1rem 20px 1rem;
 }
 
-.wallpaper {
+.main__wallpaper {
   flex: 1;
 
   height: 100vh;
@@ -32,38 +32,11 @@ img{
   background-size: cover;
 }
 
-.formBlock{
+.main__content__formBlock{
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-}
-
-
-.buttonContainer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  margin: 10px;
-  width: 120px;
-  height: 50px;
-
-  background: url('../../assets/inputs/input_1.png') no-repeat center;
-  background-size: 100% 100%;
-}
-
-.confirm {
-  width: 100px;
-  height: 30px;
-  background: transparent;
-  border: 0;
-  color: #ffffff;
-
-  margin: 0 5px 10px 0;
-
-  font-family: 'goldman', sans-serif;
-  font-size: 1rem;
 }
 
 .buttonPack {

@@ -3,8 +3,6 @@ import './styles.css';
 import PropTypes from 'prop-types';
 
 const InputT1 = ({ placeHolder, type }) => {
-  // const { placeHolder, type } = props;
-
   return (
     <div className="inputContainer">
       <input

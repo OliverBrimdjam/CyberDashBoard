@@ -1,0 +1,20 @@
+#50c1bd
+#132328
+#c7c9c9
+#3c7f7e
+#5791af
+#285555
+#315e72
+#bb485c
+#dc9c47
+#674843
+#6622CC
+#A755C2
+#B07C9E
+#B59194
+#D2A1B8
+#958CAC purple button
+#686868 gray button and panel
+#457EAC blue button
+#94acbb input placeholder
+#1e9477
