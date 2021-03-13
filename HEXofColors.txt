@@ -7,7 +7,9 @@
 #315e72
 #bb485c
 #dc9c47
+#F5C957
 #674843
+#B77B63
 #6622CC
 #A755C2
 #B07C9E
@@ -18,3 +20,11 @@
 #457EAC blue button
 #94acbb input placeholder
 #1e9477
+#0FCB73
+#94ACBB
+#7997AA
+#577D95
+#2D5D7B
+#457EAC
+#9191E9
+#C2AFF0
