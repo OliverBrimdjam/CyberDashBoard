@@ -6,6 +6,9 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     outline: 0;
+
+    --color-background-light: #F0F0F7;
+    --color-button-1: #958CAC;
   }
 
   body{
@@ -25,4 +28,6 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+
 `;

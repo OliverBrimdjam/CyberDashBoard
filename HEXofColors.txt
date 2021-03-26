@@ -1,6 +1,7 @@
 #50c1bd
 #132328
-#c7c9c9
+#c7c9c9 grayLight
+#F0F0F7 darkBackgroundWhite
 #3c7f7e
 #5791af
 #285555
