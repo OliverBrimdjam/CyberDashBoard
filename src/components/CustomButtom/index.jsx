@@ -6,34 +6,42 @@ import {
   ButtonInput,
 } from './styles';
 
-export const CustomButtonBlue = ({ children }) => {
+export const CustomButtonBlue = props => {
+  const { size, children } = props;
+
   return (
-    <ButtonContainerBlue size="500px">
-      <ButtonInput>{children}</ButtonInput>
+    <ButtonContainerBlue size={size}>
+      <ButtonInput size={size}>{children}</ButtonInput>
     </ButtonContainerBlue>
   );
 };
 
 CustomButtonBlue.defaultProps = {
   children: null,
+  size: null,
 };
 
 CustomButtonBlue.propTypes = {
   children: PropTypes.element,
+  size: PropTypes.string,
 };
 
-export const CustomButtonPurple = ({ children }) => {
+export const CustomButtonPurple = props => {
+  const { size, children } = props;
+
   return (
-    <ButtonContainerPurple size="500px">
-      <ButtonInput>{children}</ButtonInput>
+    <ButtonContainerPurple size={size}>
+      <ButtonInput size={size}>{children}</ButtonInput>
     </ButtonContainerPurple>
   );
 };
 
 CustomButtonPurple.defaultProps = {
   children: null,
+  size: null,
 };
 
-CustomButtonPurple.propTypes = {
+CustomButtonBlue.propTypes = {
   children: PropTypes.element,
+  size: PropTypes.string,
 };
