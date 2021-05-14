@@ -1,44 +1,60 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Display from './styles';
+import { Display, DisplayContainer, Label } from './styles';
 import { CustomButtonBlue, CustomButtonPurple } from '../../CustomButtom';
 
 const RoundDisplay = props => {
-  const { value, setValue, size } = props;
+  const { value, setValue, size, label, propKey } = props;
+
+  console.log(value);
+  console.log(propKey);
+  console.log(value[propKey]);
 
   const add = () => {
-    setValue(value + 1);
+    console.log('add');
+    setValue(prevState => {
+      return { ...prevState, [propKey]: value[propKey] + 1 };
+    });
   };
 
   const sub = () => {
-    setValue(value - 1);
+    setValue(prevState => {
+      return { ...prevState, [propKey]: value[propKey] - 1 };
+    });
+    console.log('sub');
   };
 
   return (
-    <div>
-      <Display>{value}</Display>
+    <DisplayContainer>
+      <Label>{label}</Label>
+      <Display size={size}>{value[propKey]}</Display>
       <div>
-        <CustomButtonBlue onClick={add} size={size}>
+        <CustomButtonBlue size={size} operation={add}>
           +
         </CustomButtonBlue>
-        <CustomButtonPurple onClick={sub} size={size}>
+        <CustomButtonPurple size={size} operation={sub}>
           -
         </CustomButtonPurple>
       </div>
-    </div>
+    </DisplayContainer>
   );
 };
 
 RoundDisplay.defaultProps = {
-  value: PropTypes.number,
+  value: PropTypes.object,
   size: PropTypes.string,
   setValue: PropTypes.func,
+  label: PropTypes.string,
+  propKey: PropTypes.string,
 };
 
 RoundDisplay.propTypes = {
-  value: PropTypes.number,
+  // eslint-disable-next-line react/forbid-prop-types
+  value: PropTypes.object,
   size: PropTypes.string,
   setValue: PropTypes.func,
+  label: PropTypes.string,
+  propKey: PropTypes.string,
 };
 
 export default RoundDisplay;

@@ -7,10 +7,10 @@ import {
 } from './styles';
 
 export const CustomButtonBlue = props => {
-  const { size, children } = props;
+  const { size, children, operation } = props;
 
   return (
-    <ButtonContainerBlue size={size}>
+    <ButtonContainerBlue onClick={operation} size={size}>
       <ButtonInput size={size}>{children}</ButtonInput>
     </ButtonContainerBlue>
   );
@@ -19,18 +19,21 @@ export const CustomButtonBlue = props => {
 CustomButtonBlue.defaultProps = {
   children: null,
   size: null,
+  operation: null,
 };
 
 CustomButtonBlue.propTypes = {
   children: PropTypes.element,
   size: PropTypes.string,
+  operation: PropTypes.func,
 };
 
 export const CustomButtonPurple = props => {
-  const { size, children } = props;
+  // eslint-disable-next-line react/prop-types
+  const { size, children, operation } = props;
 
   return (
-    <ButtonContainerPurple size={size}>
+    <ButtonContainerPurple onClick={operation} size={size}>
       <ButtonInput size={size}>{children}</ButtonInput>
     </ButtonContainerPurple>
   );
@@ -39,9 +42,11 @@ export const CustomButtonPurple = props => {
 CustomButtonPurple.defaultProps = {
   children: null,
   size: null,
+  operation: null,
 };
 
 CustomButtonBlue.propTypes = {
   children: PropTypes.element,
   size: PropTypes.string,
+  operation: PropTypes.func,
 };

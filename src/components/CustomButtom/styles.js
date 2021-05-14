@@ -10,7 +10,7 @@ export const ButtonContainerBlue = styled.div`
   justify-content: center;
   align-items: center;
 
-  margin: 10px;
+  margin: 5px;
   width: var(--var-width);
   height: calc(0.41666666 * var(--var-width));
 
@@ -25,7 +25,7 @@ export const ButtonContainerPurple = styled.div`
   justify-content: center;
   align-items: center;
 
-  margin: 10px;
+  margin: 5px;
   width: ${props => (props.size ? props.size : '120px')};
   height: calc(0.41666666 * var(--var-width));
 

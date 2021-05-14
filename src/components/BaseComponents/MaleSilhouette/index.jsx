@@ -21,36 +21,36 @@ const MaleSilhouette = () => {
     <SilhouetteGeneralContainer>
       <SilhouetteHighContainer>
         <SilhouetteHead>
-          <Link href="kkk">
+          <Link to="/">
             <img src={cyberMolduraRL} alt="head" />
           </Link>
         </SilhouetteHead>
       </SilhouetteHighContainer>
       <SilhouetteMidContainer>
         <SilhouetteRArm>
-          <Link href="kkk">
+          <Link to="/">
             <img src={cyberMolduraRL} alt="head" />
           </Link>
         </SilhouetteRArm>
         <SilhouetteTorso>
-          <Link href="kkk">
+          <Link to="/">
             <img src={cyberMolduraRL} alt="head" />
           </Link>
         </SilhouetteTorso>
         <SilhouetteLArm>
-          <Link href="kkk">
+          <Link to="/">
             <img src={cyberMolduraRL} alt="head" />
           </Link>
         </SilhouetteLArm>
       </SilhouetteMidContainer>
       <SilhouetteLowContainer>
         <SilhouetteRLeg>
-          <Link href="kkk">
+          <Link to="/">
             <img src={cyberMolduraRL} alt="head" />
           </Link>
         </SilhouetteRLeg>
         <SilhouetteLLeg>
-          <Link href="kkk">
+          <Link to="/">
             <img src={cyberMolduraRL} alt="head" />
           </Link>
         </SilhouetteLLeg>
