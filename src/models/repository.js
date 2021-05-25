@@ -1,16 +1,4 @@
-const mainState = {
-  mortalSituation: 'normal',
-  mortalNumber: 0,
-  stunSituation: 'normal',
-  stunNumber: 0,
-  btm: 4,
-  wound: 'normal',
-  head: 0,
-  torso: 0,
-  rArm: 0,
-  lArm: 0,
-  rLeg: 0,
-  lLeg: 0,
+const mainStats = {
   // stats
   int: 4,
   refBase: 5,
@@ -25,6 +13,4 @@ const mainState = {
   EmpInst: 6,
 };
 
-export default mainState;
-
-// object that keep every data from character
+export default mainStats;

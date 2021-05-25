@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 import RoundFrame from '../../../assets/frames/cyberMolduraR.png';
+import squareFrame from '../../../assets/frames/squareSimpleVectorFrame2.svg';
 
 export const DisplayContainer = styled.div`
   display: flex;
   flex-direction: row;
 
-  border: 1px solid black;
+  /* background: url(${squareFrame}) no-repeat center;
+  background-size: cover; */
+
+  /* border: 1px solid black; */
   width: fit-content;
 `;
 

@@ -6,12 +6,7 @@ import { CustomButtonBlue, CustomButtonPurple } from '../../CustomButtom';
 const RoundDisplay = props => {
   const { value, setValue, size, label, propKey } = props;
 
-  console.log(value);
-  console.log(propKey);
-  console.log(value[propKey]);
-
   const add = () => {
-    console.log('add');
     setValue(prevState => {
       return { ...prevState, [propKey]: value[propKey] + 1 };
     });
@@ -21,7 +16,6 @@ const RoundDisplay = props => {
     setValue(prevState => {
       return { ...prevState, [propKey]: value[propKey] - 1 };
     });
-    console.log('sub');
   };
 
   return (
